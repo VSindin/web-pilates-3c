@@ -4,6 +4,7 @@ import "./globals.css";
 import { BUSINESS } from "@/constants";
 import Header from "@/components/Header";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 
 const playfair = Playfair_Display({
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <MobileBottomBar />
+        <Footer />
       </body>
     </html>
   );
