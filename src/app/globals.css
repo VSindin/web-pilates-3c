@@ -2,25 +2,58 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e293b;
+  --mint: #E7F5F2;
+  --serenity: #3A7CA5;
+  --serenity-dark: #2d6389;
+  --deep: #0c2233;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-mint: var(--mint);
+  --color-serenity: var(--serenity);
+  --color-serenity-dark: var(--serenity-dark);
+  --color-deep: var(--deep);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure touch targets are at least 48px */
+button, a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Display font utility */
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Section number accent */
+.service-number {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 800;
+  opacity: 0.07;
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+  user-select: none;
 }
