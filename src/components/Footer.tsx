@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { BUSINESS } from "@/constants";
 
 const NAV_LINKS = [
@@ -71,7 +71,9 @@ export default function Footer() {
             className="w-9 h-9 rounded-xl bg-slate-700 hover:bg-[#1877F2] flex items-center justify-center transition-colors text-slate-400 hover:text-white"
             aria-label="Facebook de Pilates 3C Powerhouse"
           >
-            <Facebook size={16} aria-hidden="true" />
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
           </a>
         </div>
 
