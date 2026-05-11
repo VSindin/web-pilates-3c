@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { Instagram, Facebook } from "lucide-react";
 import { BUSINESS } from "@/constants";
 
 const NAV_LINKS = [
@@ -51,6 +52,28 @@ export default function Footer() {
             ))}
           </ul>
         </nav>
+
+        {/* Social icons */}
+        <div className="flex justify-center gap-3 mb-8 md:mb-6">
+          <a
+            href="https://www.instagram.com/pilatespowerhouse3c/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 rounded-xl bg-slate-700 hover:bg-[#E1306C] flex items-center justify-center transition-colors text-slate-400 hover:text-white"
+            aria-label="Instagram de Pilates 3C Powerhouse"
+          >
+            <Instagram size={16} aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.facebook.com/pilatespowerhouse3c/?locale=es_ES"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 rounded-xl bg-slate-700 hover:bg-[#1877F2] flex items-center justify-center transition-colors text-slate-400 hover:text-white"
+            aria-label="Facebook de Pilates 3C Powerhouse"
+          >
+            <Facebook size={16} aria-hidden="true" />
+          </a>
+        </div>
 
         {/* Bottom bar */}
         <div className="border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
