@@ -57,7 +57,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased bg-white text-slate-700">
         <JsonLd />
         <Header />
-        <main className="pb-20 md:pb-0">{children}</main>
+        <main
+          className="relative z-10 bg-white pb-20 md:pb-0"
+          style={{ marginBottom: "var(--footer-height, 500px)" }}
+        >
+          {children}
+        </main>
         <MobileBottomBar />
       </body>
     </html>

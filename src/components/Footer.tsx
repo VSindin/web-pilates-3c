@@ -1,8 +1,24 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Phone, MapPin, Clock, ExternalLink, MessageCircle } from "lucide-react";
 import { BUSINESS } from "@/constants";
 
 export default function Footer() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const update = () =>
+      document.documentElement.style.setProperty("--footer-height", `${el.offsetHeight}px`);
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    update();
+    return () => ro.disconnect();
+  }, []);
+
   const whatsappUrl = `https://wa.me/${BUSINESS.whatsapp.number}?text=${encodeURIComponent(
     BUSINESS.whatsapp.message
   )}`;
@@ -10,7 +26,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-800 text-slate-300" aria-label="Pie de página">
+    <footer
+      ref={ref}
+      className="fixed bottom-0 left-0 right-0 z-0 bg-slate-800 text-slate-300 min-h-[80vh] md:min-h-0"
+      aria-label="Pie de página"
+    >
       <div className="max-w-6xl mx-auto px-4 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
